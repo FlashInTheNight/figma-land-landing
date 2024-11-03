@@ -1,0 +1,108 @@
+---
+import Hamburger from "../components/Hamburger.astro";
+import { Image } from "astro:assets";
+
+import linkedin from "../assets/icons/linkedin_logo_blue.svg";
+import circle_x_icon from "../assets/icons/circle-x.svg";
+---
+
+<div class="hamburger-menu">
+  <Hamburger icon={circle_x_icon} />
+  <nav class="navigation">
+    <ul class="navigation__list">
+      <li class="navigation__item">
+        <a class="navigation__link" href="#features">Features</a>
+      </li>
+      <li class="navigation__item">
+        <a class="navigation__link" href="#testimonials">Testimonials</a>
+      </li>
+      <li class="navigation__item">
+        <a class="navigation__link" href="#pricing">Pricing</a>
+      </li>
+      <li class="navigation__item">
+        <a class="navigation__link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="divider"></div>
+  <div class="footer__contact__social p-none">
+    <a href="#" class="footer__contact__link"
+      ><Image src={linkedin} alt="linkedin" />
+    </a>
+    <a href="#" class="footer__contact__link"
+      ><Image src={linkedin} alt="linkedin" />
+    </a>
+    <a href="#" class="footer__contact__link"
+      ><Image src={linkedin} alt="linkedin" />
+    </a>
+  </div>
+</div>
+
+<style is:global>
+  .hamburger-menu {
+    background-color: var(--light-text);
+    position: absolute;
+    display: none;
+    z-index: 10;
+    inset: 0;
+    height: 100vh;
+    padding: 30px;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 30px;
+  }
+  .footer__contact__social.p-none {
+    padding: 0;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--text);
+  }
+  .expanded {
+    display: flex;
+  }
+
+
+  .navigation__list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    row-gap: 15px;
+    list-style-type: none;
+  }
+  .navigation__item {
+    padding: 5px;
+  }
+  .navigation__link {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .navigation__list {
+      flex-direction: row;
+      align-items: center;
+      row-gap: 0;
+      column-gap: 21px;
+    }
+
+    .navigation__link {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 187%;
+      letter-spacing: 0.01em;
+      text-align: center;
+      color: var(--light-text);
+    }
+  }
+</style>

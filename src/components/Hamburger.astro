@@ -1,0 +1,22 @@
+---
+const { icon } = Astro.props;
+---
+
+<button type="button" class="hamburger">
+  <img src={icon.src} alt="burger icon" />
+</button>
+
+<style is:global>
+  .hamburger {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+  }
+
+  @media (min-width: 1024px) {
+    .hamburger {
+      display: none;
+    }
+  }
+</style>

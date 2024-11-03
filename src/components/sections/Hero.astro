@@ -1,0 +1,179 @@
+---
+import logo from "../../assets/icons/logo.svg";
+import BurgerIcon from "../../assets/icons/burger-icon.svg";
+import Container from "../Container.astro";
+import Button from "../Button.astro";
+import Hamburger from "../Hamburger.astro";
+import HamburgerMenu from "../HamburgerMenu.astro";
+import Navigation from "../Navigation.astro";
+import linkedin from "../../assets/icons/ant-design_linkedin-filled.svg";
+import { Image } from "astro:assets";
+---
+
+<header class="hero">
+  <Container>
+    <div class="hero__overlay">
+      <div class="header">
+        <Navigation />
+        <a class="logo" href="#"><img src={logo.src} alt="logo" /></a>
+        <Hamburger icon={BurgerIcon} />
+        <HamburgerMenu />
+        <div class="hero__contact__social">
+          <a href="#" class="hero__contact__link"
+            ><Image
+              class="hero__contact__link__img"
+              src={linkedin}
+              alt="linkedin"
+            />
+          </a>
+          <a href="#" class="hero__contact__link"
+            ><Image
+              class="hero__contact__link__img"
+              src={linkedin}
+              alt="linkedin"
+            />
+          </a>
+          <a href="#" class="hero__contact__link"
+            ><Image
+              class="hero__contact__link__img"
+              src={linkedin}
+              alt="linkedin"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="hero__content">
+        <h1 class="title">The best products start with Figma</h1>
+        <p class="subtitle">
+          Most calendars are designed for teams. <span class="subtitle__span"
+            >Slate is designed for freelancers</span
+          >
+        </p>
+      </div>
+      <Button text="Try For Free" class="button__wight" />
+    </div>
+  </Container>
+</header>
+
+<style>
+  .hero {
+    background-image: url("../../assets/images/desktop-header@2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    color: var(--light-text);
+  }
+  .hero__overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__content {
+    margin-top: 80px;
+    margin-bottom: 70px;
+
+    @media (min-width: 1024px) {
+      margin-top: 120px;
+      margin-bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: end;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 430px 250px 1fr;
+      justify-items: end;
+      width: 100%;
+      padding: 39px 40px;
+    }
+  }
+
+  .logo {
+    @media (min-width: 1024px) {
+      justify-self: start;
+      padding-left: 10px;
+    }
+  }
+
+  .hero__contact__social {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: flex;
+      column-gap: 15px;
+    }
+  }
+
+  .hero__contact__link {
+    @media (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .hero__contact__link__img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+      hue-rotate(185deg) brightness(105%) contrast(101%);
+    transition: filter 0.3s;
+  }
+
+  .hero__contact__link__img:hover {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7454%)
+      hue-rotate(189deg) brightness(91%) contrast(106%);
+  }
+
+  .hero__contact__link__img:active {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7454%)
+      hue-rotate(189deg) brightness(70%) contrast(120%);
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 115%;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-bottom: 17px;
+
+    @media (min-width: 1024px) {
+      font-weight: 700;
+      font-size: 74px;
+      line-height: 114%;
+      letter-spacing: 0em;
+      text-align: center;
+      color: var(--light-text);
+      max-width: 700px;
+    }
+  }
+  .subtitle {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 143%;
+    letter-spacing: 0.01em;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      max-width: 760px;
+    }
+  }
+
+  .subtitle__span {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: inline;
+    }
+  }
+  .button__wight {
+    width: 236px;
+  }
+</style>

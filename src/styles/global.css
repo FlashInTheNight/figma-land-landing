@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/Roboto-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #2091f9;
+  --primary-focus: #0d6ef9;
+  --primary-hover: #0b5bc7;
+  --primary-active: #0a53be;
+  --text: #252b42;
+  --second-text: #374754;
+  --light-text: #fff;
+  --dark-background: #252b42;
+  --light-background: #fff;
+  --background-gradient: #222b32;
+  --section-top: 100px;
+  --laptop: 1024px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 4px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 4.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: var(--text);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+button,
+a {
+  cursor: pointer;
+}

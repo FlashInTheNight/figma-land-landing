@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+
+import bx_map from "../../assets/icons/bx-map.svg";
+import phone from "../../assets/icons/phone.svg";
+import linkedin from "../../assets/icons/ant-design_linkedin-filled.svg";
+import Container from "../Container.astro";
+---
+
+<footer class="footer">
+  <Container>
+    <div class="footer__overlay">
+      <nav class="footer__nav">
+        <!-- 1 -->
+        <div class="footer__nav__item">
+          <h3 class="footer__nav__title">Annette Steward</h3>
+          <div class="footer__nav__links">
+            <a href="#" class="footer__nav__link">Jennie Cooper</a>
+            <a href="#" class="footer__nav__link">Julie Henry</a>
+            <a href="#" class="footer__nav__link">Johnny Murphy</a>
+            <a href="#" class="footer__nav__link">Gregory Mccoy</a>
+            <a href="#" class="footer__nav__link">Marvin Mckinney</a>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="footer__nav__item">
+          <h3 class="footer__nav__title">Annette Steward</h3>
+          <div class="footer__nav__links">
+            <a href="#" class="footer__nav__link">Jennie Cooper</a>
+            <a href="#" class="footer__nav__link">Julie Henry</a>
+            <a href="#" class="footer__nav__link">Johnny Murphy</a>
+            <a href="#" class="footer__nav__link">Gregory Mccoy</a>
+            <a href="#" class="footer__nav__link">Marvin Mckinney</a>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="footer__nav__item">
+          <h3 class="footer__nav__title">Annette Steward</h3>
+          <div class="footer__nav__links">
+            <a href="#" class="footer__nav__link">Jennie Cooper</a>
+            <a href="#" class="footer__nav__link">Julie Henry</a>
+            <a href="#" class="footer__nav__link">Johnny Murphy</a>
+            <a href="#" class="footer__nav__link">Gregory Mccoy</a>
+            <a href="#" class="footer__nav__link">Marvin Mckinney</a>
+          </div>
+        </div>
+      </nav>
+      <div class="footer__contact">
+        <p class="footer__contact__item">
+          <Image src={bx_map} alt="bx_map" />
+          <span class="footer__contact__item__descr"
+            >7480 Mockingbird Hill undefined</span
+          >
+        </p>
+        <p class="footer__contact__item">
+          <Image src={phone} alt="bx_map" />
+          <span class="footer__contact__item__descr">(239) 555-0108</span>
+        </p>
+        <div class="footer__contact__social">
+          <a href="#" class="footer__contact__link"
+            ><Image class='footer__contact__link__img' src={linkedin} alt="linkedin" />
+          </a>
+          <a href="#" class="footer__contact__link"
+            ><Image class='footer__contact__link__img' src={linkedin} alt="linkedin" />
+          </a>
+          <a href="#" class="footer__contact__link"
+            ><Image class='footer__contact__link__img' src={linkedin} alt="linkedin" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</footer>
+
+<style is:global>
+  .footer {
+    color: var(--light-text);
+    background-color: var(--text);
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+  }
+  .footer__nav__item {
+  }
+
+  .footer__nav__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .footer__nav__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  .footer__nav__link {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 187%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--light-text);
+    text-decoration: none;
+  }
+
+  .footer__nav__link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+  .footer__nav__link:active {
+    color: var(--primary-active);
+  }
+
+  .footer__contact {
+    margin-top: 75px;
+    padding: 0 25px 0 25px;
+  }
+
+  .footer__contact p:nth-child(2n) {
+    margin-top: 10px;
+  }
+
+  .footer__contact__item {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer__contact__item__descr {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 180%;
+    letter-spacing: 0.01em;
+    padding: 10px;
+  }
+
+  .footer__contact__social {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+    justify-self: center;
+    padding: 20px 0 20px 0;
+  }
+
+  .footer__contact__link__img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+      hue-rotate(185deg) brightness(105%) contrast(101%);
+    transition: filter 0.3s;
+  }
+
+  .footer__contact__link__img:hover {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7454%)
+      hue-rotate(189deg) brightness(91%) contrast(106%);
+  }
+
+  .footer__contact__link__img:active {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(7454%)
+      hue-rotate(189deg) brightness(70%) contrast(120%);
+  }
+
+  @media (min-width: 1024px) {
+    .footer__overlay {
+      display: flex;
+    }
+
+    .footer__nav {
+      flex-direction: row;
+      column-gap: 80px;
+    }
+    .footer__nav__links {
+      align-items: start;
+    }
+    .footer__contact {
+      margin-top: 0;
+      margin-left: auto;
+    }
+
+    .footer__contact__social {
+      justify-self: auto;
+    }
+  }
+</style>

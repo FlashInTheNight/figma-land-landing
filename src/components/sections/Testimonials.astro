@@ -1,0 +1,129 @@
+---
+import { Image } from "astro:assets";
+
+import Button from "../Button.astro";
+
+import IBM_logo from "../../assets/images/logos_ibm.svg";
+import Avatar from "../../assets/images/avatar.png";
+---
+
+<section id="testimonials" class="testimonials">
+  <h2 class="title">Testimonials</h2>
+  <div class="content">
+    <Image src={IBM_logo} alt="IBM_logo" />
+    <p class="subtitle">
+      Most calendars are designed for teams. Slate is designed for freelancers
+      who want a simple way to plan their schedule.
+    </p>
+    <div class="avatar-box">
+      <Image
+        class="avatar-box__image"
+        src={Avatar}
+        densities={[1, 2]}
+        alt="Avatar"
+      />
+      <p class="avatar-box__name">Organize across</p>
+      <p class="avatar-box__job">Ui designer</p>
+    </div>
+  </div>
+  <Button text="More Testimonials" class="button__wight" />
+</section>
+
+<style>
+  .testimonials {
+    margin-top: var(--section-top);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 80px;
+    padding-bottom: 100px;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 115%;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 125%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--second-text);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 45px;
+  }
+
+  .avatar-box {
+    display: grid;
+    grid-template-columns: 43px 75px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    column-gap: 10px;
+
+    font-family: "Roboto";
+  }
+
+  .avatar-box__image {
+    border-radius: 50%;
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .avatar-box__name {
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: var(--second-text);
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .avatar-box__job {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 180%;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .button__wight {
+    width: 280px;
+  }
+
+  @media (min-width: 1024px) {
+    .subtitle {
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 143%;
+      letter-spacing: 0.01em;
+      text-align: center;
+      max-width: 930px;
+    }
+    .avatar-box__name {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 144%;
+    }
+    .avatar-box__job {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 187%;
+    }
+    .avatar-box {
+      grid-template-columns: 43px 130px;
+    }
+  }
+</style>

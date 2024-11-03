@@ -1,0 +1,28 @@
+---
+const { text, class: className, ...rest } = Astro.props;
+---
+
+<button class={`button ${className}`} {...rest}>{text}</button>
+
+<style>
+  .button {
+    border-radius: 35px;
+    padding: 16px 0px;
+    border: none;
+    height: 56px;
+    background: var(--primary);
+    color: var(--light-text);
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0.01em;
+  }
+  .button:hover {
+    background: var(--primary-hover);
+  }
+  .button:active {
+    background: var(--primary-active);
+  }
+</style>
